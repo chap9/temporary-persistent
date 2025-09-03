@@ -102,7 +102,7 @@
                 default-submodes))
       (switch-to-buffer temp-buffer-name))
     (set (make-local-variable 'kill-buffer-query-functions)
-         'temporary-persistent-save-and-kill-buffer)))
+         (list 'temporary-persistent-save-and-kill-buffer))))
 )
 
 (add-hook 'kill-emacs-hook 'temporary-persistent-save-all-related-buffers)
